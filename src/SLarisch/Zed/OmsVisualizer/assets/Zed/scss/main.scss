@@ -1,0 +1,144 @@
+#mermaid-container {
+    top: 60px;
+    width: auto;
+    overflow: auto;
+    position: relative;
+}
+
+@keyframes blink-glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 0px red);
+    }
+    50% {
+        filter: drop-shadow(0 0 15px red);
+    }
+}
+
+.highlight-glow {
+    animation: blink-glow 2s ease-in-out infinite;
+}
+
+g.node:hover rect {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.legend-box {
+    z-index: 999;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-family: sans-serif;
+    font-size: 14px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+    strong {
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 6px;
+    }
+
+    .line-color,
+    .legend-icon,
+    .legend-color {
+        width: 16px;
+        margin-right: 8px;
+    }
+
+    .line-color {
+        height: 3px;
+    }
+
+    .legend-icon,
+    .legend-color {
+        height: 16px;
+    }
+
+    .legend-color {
+        border-radius: 3px;
+        border: 1px solid #999;
+    }
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    .title {
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    .controls {
+        display: flex;
+        gap: 8px;
+
+        #zoom-level {
+            font-weight: 700;
+            margin: auto;
+            min-width: 50px;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+        }
+
+        button {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.2s;
+
+            &:hover {
+                background-color: #0056b3;
+            }
+        }
+    }
+}
+
+.edgeLabel {
+    font-size: 12px;
+    color: #2539e3 !important;
+    cursor: pointer;
+}
+
+.nodeLabel {
+    cursor: pointer;
+}
+
+foreignObject > div.labelBkg {
+    padding: 6px 12px;
+    background-color: #ffffff !important;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: auto !important;
+    max-width: none !important;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    white-space: nowrap;
+}

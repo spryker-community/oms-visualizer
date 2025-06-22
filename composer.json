@@ -1,0 +1,25 @@
+{
+  "name": "slarisch/oms-visualizer",
+  "type": "library",
+  "description": "OmsVisualizer - visualize OMS workflow with mermaid",
+  "require": {
+    "php": ">=8.3",
+    "spryker/kernel": "^3.52.0"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "SLarisch\\": "src/SLarisch"
+    }
+  },
+  "authors": [
+    {
+      "name": "Sebastian Larisch",
+      "email": "kontakt@webcrab.de"
+    }
+  ],
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

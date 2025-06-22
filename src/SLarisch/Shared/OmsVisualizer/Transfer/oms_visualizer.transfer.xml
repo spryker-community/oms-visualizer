@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<transfers xmlns="aldi:transfer-01"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="aldi:transfer-01 http://static.spryker.com/transfer-01.xsd">
+
+    <transfer name="OmsVisualizerStyle">
+        <property name="initialStateStyle" type="StateStyle" />
+        <property name="finalStateStyle" type="StateStyle" />
+        <property name="failedStateStyle" type="StateStyle" />
+        <property name="normalStateStyle" type="StateStyle" />
+        <property name="obsoleteStateStyle" type="StateStyle" />
+        <property name="happyPathStyle" type="TransitionStyle" />
+        <property name="conditionStyle" type="TransitionStyle" />
+        <property name="subGraphStyle" type="StateStyle" />
+    </transfer>
+
+    <transfer name="StateStyle" strict="true">
+        <property name="backgroundColor" type="string" />
+        <property name="borderColor" type="string" />
+        <property name="fontColor" type="string" />
+        <property name="borderWidth" type="string" default="1" />
+    </transfer>
+
+    <transfer name="TransitionStyle">
+        <property name="color" type="string" />
+        <property name="lineStyle" type="string" />
+    </transfer>
+
+</transfers>
