@@ -2,37 +2,117 @@
 
 declare(strict_types=1);
 
-namespace Pyz\Shared\OmsVisualizer;
+namespace SLarisch\Shared\OmsVisualizer;
 
 class OmsVisualizerConstants
 {
-    public const string DEBUG_MODE = 'MERMAID:DEBUG_MODE';
-    public const string MERMAID_GLOBAL_CONFIGURATION = 'MERMAID:MERMAID_GLOBAL_CONFIGURATION';
-    public const string STATE_BORDER_WIDTH = 'MERMAID:STATE_BORDER_WIDTH';
+    /**
+     * @var string
+     */
+    public const DEBUG_MODE = 'MERMAID:DEBUG_MODE';
 
-    public const string INITIAL_STATE_BACKGROUND_COLOR = 'MERMAID:INITIAL_STATE_BACKGROUND_COLOR';
-    public const string INITIAL_STATE_BORDER_COLOR = 'MERMAID:INITIAL_STATE_BORDER_COLOR';
-    public const string INITIAL_STATE_FONT_COLOR = 'MERMAID:INITIAL_STATE_FONT_COLOR';
+    /**
+     * @var string
+     */
+    public const MERMAID_GLOBAL_CONFIGURATION = 'MERMAID:MERMAID_GLOBAL_CONFIGURATION';
 
-    public const string FINAL_STATE_BACKGROUND_COLOR = 'MERMAID:FINAL_STATE_BACKGROUND_COLOR';
-    public const string FINAL_STATE_BORDER_COLOR = 'MERMAID:FINAL_STATE_BORDER_COLOR';
-    public const string FINAL_STATE_FONT_COLOR = 'MERMAID:FINAL_STATE_FONT_COLOR';
+    /**
+     * @var string
+     */
+    public const STATE_BORDER_WIDTH = 'MERMAID:STATE_BORDER_WIDTH';
 
-    public const string FAILED_STATE_BACKGROUND_COLOR = 'MERMAID:FAILED_STATE_BACKGROUND_COLOR';
-    public const string FAILED_STATE_BORDER_COLOR = 'MERMAID:FAILED_STATE_BORDER_COLOR';
-    public const string FAILED_STATE_FONT_COLOR = 'MERMAID:FAILED_STATE_FONT_COLOR';
+    /**
+     * @var string
+     */
+    public const INITIAL_STATE_BACKGROUND_COLOR = 'MERMAID:INITIAL_STATE_BACKGROUND_COLOR';
 
-    public const string OBSOLETE_STATE_BACKGROUND_COLOR = 'MERMAID:OBSOLETE_STATE_BACKGROUND_COLOR';
-    public const string OBSOLETE_STATE_BORDER_COLOR = 'MERMAID:OBSOLETE_STATE_BORDER_COLOR';
-    public const string OBSOLETE_STATE_FONT_COLOR = 'MERMAID:OBSOLETE_STATE_FONT_COLOR';
+    /**
+     * @var string
+     */
+    public const INITIAL_STATE_BORDER_COLOR = 'MERMAID:INITIAL_STATE_BORDER_COLOR';
 
-    public const string NORMAL_STATE_BACKGROUND_COLOR = 'MERMAID:NORMAL_STATE_BACKGROUND_COLOR';
-    public const string NORMAL_STATE_BORDER_COLOR = 'MERMAID:NORMAL_STATE_BORDER_COLOR';
-    public const string NORMAL_STATE_FONT_COLOR = 'MERMAID:NORMAL_STATE_FONT_COLOR';
+    /**
+     * @var string
+     */
+    public const INITIAL_STATE_FONT_COLOR = 'MERMAID:INITIAL_STATE_FONT_COLOR';
 
-    public const string SUB_GRAPH_BACKGROUND_COLOR = 'MERMAID:SUB_GRAPH_BACKGROUND_COLOR';
-    public const string SUB_GRAPH_BORDER_COLOR = 'MERMAID:SUB_GRAPH_BORDER_COLOR';
+    /**
+     * @var string
+     */
+    public const FINAL_STATE_BACKGROUND_COLOR = 'MERMAID:FINAL_STATE_BACKGROUND_COLOR';
 
-    public const string HAPPY_PATH_COLOR = 'MERMAID:HAPPY_PATH_COLOR';
-    public const string OMS_CONFIGURATION_DIRECTORY = 'MERMAID:OMS_CONFIGURATION_DIRECTORY';
+    /**
+     * @var string
+     */
+    public const FINAL_STATE_BORDER_COLOR = 'MERMAID:FINAL_STATE_BORDER_COLOR';
+
+    /**
+     * @var string
+     */
+    public const FINAL_STATE_FONT_COLOR = 'MERMAID:FINAL_STATE_FONT_COLOR';
+
+    /**
+     * @var string
+     */
+    public const FAILED_STATE_BACKGROUND_COLOR = 'MERMAID:FAILED_STATE_BACKGROUND_COLOR';
+
+    /**
+     * @var string
+     */
+    public const FAILED_STATE_BORDER_COLOR = 'MERMAID:FAILED_STATE_BORDER_COLOR';
+
+    /**
+     * @var string
+     */
+    public const FAILED_STATE_FONT_COLOR = 'MERMAID:FAILED_STATE_FONT_COLOR';
+
+    /**
+     * @var string
+     */
+    public const OBSOLETE_STATE_BACKGROUND_COLOR = 'MERMAID:OBSOLETE_STATE_BACKGROUND_COLOR';
+
+    /**
+     * @var string
+     */
+    public const OBSOLETE_STATE_BORDER_COLOR = 'MERMAID:OBSOLETE_STATE_BORDER_COLOR';
+
+    /**
+     * @var string
+     */
+    public const OBSOLETE_STATE_FONT_COLOR = 'MERMAID:OBSOLETE_STATE_FONT_COLOR';
+
+    /**
+     * @var string
+     */
+    public const NORMAL_STATE_BACKGROUND_COLOR = 'MERMAID:NORMAL_STATE_BACKGROUND_COLOR';
+
+    /**
+     * @var string
+     */
+    public const NORMAL_STATE_BORDER_COLOR = 'MERMAID:NORMAL_STATE_BORDER_COLOR';
+
+    /**
+     * @var string
+     */
+    public const NORMAL_STATE_FONT_COLOR = 'MERMAID:NORMAL_STATE_FONT_COLOR';
+
+    /**
+     * @var string
+     */
+    public const SUB_GRAPH_BACKGROUND_COLOR = 'MERMAID:SUB_GRAPH_BACKGROUND_COLOR';
+
+    /**
+     * @var string
+     */
+    public const SUB_GRAPH_BORDER_COLOR = 'MERMAID:SUB_GRAPH_BORDER_COLOR';
+
+    /**
+     * @var string
+     */
+    public const HAPPY_PATH_COLOR = 'MERMAID:HAPPY_PATH_COLOR';
+
+    /**
+     * @var string
+     */
+    public const OMS_CONFIGURATION_DIRECTORY = 'MERMAID:OMS_CONFIGURATION_DIRECTORY';
 }

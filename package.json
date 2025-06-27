@@ -1,11 +1,10 @@
 {
   "name": "oms-visualizer",
-  "version": "1.0.0",
+  "version": "0.1",
   "description": "Visual flowchart renderer for OMS using Mermaid",
-  "private": true,
   "license": "MIT",
   "dependencies": {
     "@mermaid-js/layout-elk": "^0.1.7",
-    "mermaid": "^11.6.0"
+    "mermaid": "^11.0"
   }
 }

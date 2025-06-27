@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+    <administration>
+        <pages>
+            <oms-visualizer>
+                <label>Oms Visualizer</label>
+                <title>Oms Visualizer</title>
+                <bundle>oms-visualizer</bundle>
+                <controller>index</controller>
+                <action>index</action>
+                <icon>fa-project-diagram</icon>
+            </oms-visualizer>
+        </pages>
+    </administration>
+</config>

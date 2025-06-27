@@ -1,3 +1,3 @@
-import { runOmsVisualizer } from './mermaid-init';
+import { runOmsVisualizer } from './oms-visualizer-init';
 
 window.runOmsVisualizer = runOmsVisualizer;

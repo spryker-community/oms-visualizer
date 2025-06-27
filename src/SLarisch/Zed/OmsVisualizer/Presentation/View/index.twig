@@ -1,0 +1,151 @@
+{% extends '@Gui/Layout/iframe-layout.twig' %}
+
+{% block content %}
+    <link rel="stylesheet" href="{{ assetsPath('css/spryker-oms-visualizer.css') }}">
+    <style>
+        .node rect {
+            fill: {{ defaultStyles.normalStateStyle.backgroundColor }} !important;
+        }
+    </style>
+    <script type="module">
+        runOmsVisualizer({{ omsVisualizerConfig|raw }});
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let currentZoom = 1;
+            const zoomStep = 0.1;
+
+            const zoomWrapper = document.getElementById('oms-visualizer-zoom-wrapper');
+            const zoomDisplay = document.getElementById('zoom-level');
+
+            function applyZoom() {
+                zoomWrapper.style.transform = `scale(${currentZoom})`;
+                zoomWrapper.style.transformOrigin = 'top left';
+
+                zoomWrapper.style.width = `${100 * currentZoom}%`;
+                zoomWrapper.style.height = `${100 * currentZoom}%`;
+
+                zoomDisplay.textContent = `${Math.round(currentZoom * 100)}%`;
+            }
+
+            document.getElementById('zoom-in-btn')?.addEventListener('click', () => {
+                currentZoom += zoomStep;
+                applyZoom();
+            });
+
+            document.getElementById('zoom-out-btn')?.addEventListener('click', () => {
+                currentZoom = Math.max(zoomStep, currentZoom - zoomStep);
+                applyZoom();
+            });
+
+            document.getElementById('search').addEventListener('keyup', (e) => {
+                if (e.key === 'Enter' || e.keyCode === 13) {
+                    let targetText = document.getElementById('search').value;
+
+                    const container = document.getElementById('oms-visualizer-container');
+                    const paragraphs = container.querySelectorAll('p');
+
+                    for (const p of paragraphs) {
+                        if (p.textContent.trim() === targetText) {
+                            let wrapper = p.closest('.node');
+                            wrapper.classList.add('highlight-glow');
+                            setTimeout(() => wrapper.classList.remove('highlight-glow'), 10000);
+                        }
+                    }
+                }
+            });
+
+            // zoom in/out
+            document.getElementById('oms-visualizer-container').addEventListener('wheel', (event) => {
+                if (event.ctrlKey) {
+                    event.preventDefault();
+                    if (event.deltaY < 0) {
+                        currentZoom += zoomStep;
+                    } else {
+                        currentZoom = Math.max(zoomStep, currentZoom - zoomStep);
+                    }
+                    applyZoom();
+                }
+            }, {passive: false});
+        });
+    </script>
+    <header>
+        <div class="title">OMS Process: {{ app.request.get('process') }}</div>
+        <div class="controls">
+            <input type="text" id="search"/>
+            <span id="zoom-level">100%</span>
+            <button id="zoom-out-btn">−</button>
+            <button id="zoom-in-btn">+</button>
+        </div>
+    </header>
+
+    <div class="legend-box">
+        <div><strong>Legend</strong></div>
+        <div class="legend-item">
+            <div class="legend-color" style="background:{{ defaultStyles.subgraphStyle.backgroundColor }};"></div>
+            <div>Subgraph</div>
+        </div>
+        <div class="legend-item">
+            <div class="line-color" style="background-color:{{ defaultStyles.happyPathStyle.color }};"></div>
+            <div>Happy Path</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background:{{ defaultStyles.initialStateStyle.backgroundColor }};"></div>
+            <div>Initial State</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background:{{ defaultStyles.normalStateStyle.backgroundColor }};"></div>
+            <div>Normal State</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background:{{ defaultStyles.finalStateStyle.backgroundColor }};"></div>
+            <div>Final State</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background:{{ defaultStyles.failedStateStyle.backgroundColor }};"></div>
+            <div>Failed State</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background:{{ defaultStyles.obsoleteStateStyle.backgroundColor }};"></div>
+            <div>Obsolete State</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-icon">✋</div>
+            <div>manually executable</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-icon">🔄</div>
+            <div>onEnter event</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-icon">⌛</div>
+            <div>Timeout</div>
+        </div>
+    </div>
+
+    <div id="oms-visualizer-container">
+        <div id="oms-visualizer-zoom-wrapper">
+            <div class="mermaid">
+                {% autoescape false %}
+                    {{ omsVisualizerFlowChart|raw }}
+                {% endautoescape %}
+            </div>
+        </div>
+    </div>
+
+    {% if debug %}
+        <div class="debug">
+            <h2>Debug Output:</h2>
+            <strong>Docs: </strong><a href="https://mermaid.js.org/syntax/flowchart.html">https://mermaid.js.org/syntax/flowchart.html</a>
+            <pre>
+        {% autoescape false %}
+            {{ omsVisualizerFlowChart|raw }}
+        {% endautoescape %}
+        </pre>
+        </div>
+    {% endif %}
+
+    {% block footer_js %}
+        {{ parent() }}
+        <script src="{{ assetsPath('js/spryker-oms-visualizer.js') }}"></script>
+    {% endblock %}
+{% endblock %}

@@ -4,12 +4,21 @@ declare(strict_types=1);
 
 namespace SLarisch\Zed\OmsVisualizer\Communication;
 
+use SLarisch\Zed\OmsVisualizer\OmsVisualizerDependencyProvider;
 use SLarisch\Zed\OmsVisualizer\OmsVisualizerConfig;
 use Spryker\Zed\Kernel\Communication\AbstractCommunicationFactory;
+use Spryker\Zed\Oms\Business\OmsFacadeInterface;
 
 /**
  * @method OmsVisualizerConfig getConfig()
  */
 class OmsVisualizerCommunicationFactory extends AbstractCommunicationFactory
 {
+    /**
+     * @return \Spryker\Zed\Oms\Business\OmsFacadeInterface
+     */
+    public function getOmsFacade(): OmsFacadeInterface
+    {
+        return $this->getProvidedDependency(OmsVisualizerDependencyProvider::FACADE_OMS);
+    }
 }

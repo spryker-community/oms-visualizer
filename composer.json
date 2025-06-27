@@ -2,8 +2,10 @@
   "name": "slarisch/oms-visualizer",
   "type": "library",
   "description": "OmsVisualizer - visualize OMS workflow with mermaid",
+  "keywords": ["spryker", "oms", "visualizer", "workflow", "mermaid"],
+  "homepage": "https://github.com/slarisch/oms-visualizer",
   "require": {
-    "php": ">=8.3",
+    "php": ">=8.2",
     "spryker/kernel": "^3.52.0"
   },
   "require-dev": {
@@ -19,6 +21,16 @@
       "email": "kontakt@webcrab.de"
     }
   ],
+  "support": {
+    "issues": "https://github.com/slarisch/oms-visualizer/issues",
+    "source": "https://github.com/slarisch/oms-visualizer"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
   "license": "MIT",
   "minimum-stability": "dev",
   "prefer-stable": true

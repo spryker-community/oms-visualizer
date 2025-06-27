@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace SLarisch\Zed\OmsVisualizer;
 
-use Generated\Shared\Transfer\OmsVisualizerStyle;
+use Generated\Shared\Transfer\OmsVisualizerStyleTransfer;
 use Generated\Shared\Transfer\StateStyleTransfer;
 use Generated\Shared\Transfer\TransitionStyleTransfer;
 use SLarisch\Shared\OmsVisualizer\OmsVisualizerConstants;
@@ -12,51 +12,120 @@ use Spryker\Zed\Kernel\AbstractBundleConfig;
 
 class OmsVisualizerConfig extends AbstractBundleConfig
 {
-    private const bool DEFAULT_DEBUG_MODE = false;
+    /**
+     * @var bool
+     */
+    private const DEFAULT_DEBUG_MODE = false;
 
-    private const string DEFAULT_STATE_BORDER_WIDTH = '1';
+    /**
+     * @var string
+     */
+    private const DEFAULT_STATE_BORDER_WIDTH = '1';
 
-    private const string DEFAULT_INITIAL_STATE_BORDER_COLOR = '#33CC66';
+    /**
+     * @var string
+     */
+    private const DEFAULT_INITIAL_STATE_BORDER_COLOR = '#33CC66';
 
-    private const string DEFAULT_INITIAL_STATE_BACKGROUND_COLOR = '#33CC66';
+    /**
+     * @var string
+     */
+    private const DEFAULT_INITIAL_STATE_BACKGROUND_COLOR = '#33CC66';
 
-    private const string DEFAULT_INITIAL_STATE_FONT_COLOR = '#FFFFFF';
+    /**
+     * @var string
+     */
+    private const DEFAULT_INITIAL_STATE_FONT_COLOR = '#FFFFFF';
 
-    private const string DEFAULT_NORMAL_STATE_BORDER_COLOR = '#33CC66';
+    /**
+     * @var string
+     */
+    private const DEFAULT_NORMAL_STATE_BORDER_COLOR = '#33CC66';
 
-    private const string DEFAULT_NORMAL_STATE_BACKGROUND_COLOR = '#FFFADD';
+    /**
+     * @var string
+     */
+    private const DEFAULT_NORMAL_STATE_BACKGROUND_COLOR = '#FFFADD';
 
-    private const string DEFAULT_NORMAL_STATE_FONT_COLOR = '#FFFFFF';
+    /**
+     * @var string
+     */
+    private const DEFAULT_NORMAL_STATE_FONT_COLOR = '#FFFFFF';
 
-    private const string DEFAULT_OBSOLETE_STATE_BORDER_COLOR = '#DDDDDD';
+    /**
+     * @var string
+     */
+    private const DEFAULT_OBSOLETE_STATE_BORDER_COLOR = '#DDDDDD';
 
-    private const string DEFAULT_OBSOLETE_STATE_BACKGROUND_COLOR = '#DDDDDD';
+    /**
+     * @var string
+     */
+    private const DEFAULT_OBSOLETE_STATE_BACKGROUND_COLOR = '#DDDDDD';
 
-    private const string DEFAULT_OBSOLETE_STATE_FONT_COLOR = '#BBBBBB';
+    /**
+     * @var string
+     */
+    private const DEFAULT_OBSOLETE_STATE_FONT_COLOR = '#BBBBBB';
 
-    private const string DEFAULT_FINAL_STATE_BORDER_COLOR = '#FFFADD';
+    /**
+     * @var string
+     */
+    private const DEFAULT_FINAL_STATE_BORDER_COLOR = '#FFFADD';
 
-    private const string DEFAULT_FINAL_BACKGROUND_COLOR = '#6699FF';
+    /**
+     * @var string
+     */
+    private const DEFAULT_FINAL_BACKGROUND_COLOR = '#6699FF';
 
-    private const string DEFAULT_FINAL_STATE_FONT_COLOR = '#FFFFFF';
+    /**
+     * @var string
+     */
+    private const DEFAULT_FINAL_STATE_FONT_COLOR = '#FFFFFF';
 
-    private const string DEFAULT_FAILED_STATE_BORDER_COLOR = '#F08080';
+    /**
+     * @var string
+     */
+    private const DEFAULT_FAILED_STATE_BORDER_COLOR = '#F08080';
 
-    private const string DEFAULT_FAILED_BACKGROUND_COLOR = '#F08080';
+    /**
+     * @var string
+     */
+    private const DEFAULT_FAILED_BACKGROUND_COLOR = '#F08080';
 
-    private const string DEFAULT_FAILED_STATE_FONT_COLOR = '#FFFFFF';
+    /**
+     * @var string
+     */
+    private const DEFAULT_FAILED_STATE_FONT_COLOR = '#FFFFFF';
 
-    private const string DEFAULT_SUB_GRAPH_BACKGROUND_COLOR = '#EEEEEE';
+    /**
+     * @var string
+     */
+    private const DEFAULT_SUB_GRAPH_BACKGROUND_COLOR = '#EEEEEE';
 
-    private const string DEFAULT_SUB_GRAPH_BORDER_COLOR = '#CCCCCC';
+    /**
+     * @var string
+     */
+    private const DEFAULT_SUB_GRAPH_BORDER_COLOR = '#CCCCCC';
 
-    private const string DEFAULT_HAPPY_PATH_COLOR = '#00FF00';
+    /**
+     * @var string
+     */
+    private const DEFAULT_HAPPY_PATH_COLOR = '#00FF00';
 
-    private const string DEFAULT_LABEL_BACKGROUND_COLOR = '#FFFFFF';
+    /**
+     * @var string
+     */
+    private const DEFAULT_LABEL_BACKGROUND_COLOR = '#FFFFFF';
 
-    private const string DEFAULT_OMS_CONFIGURATION_DIRECTORY = '/data/config/Zed/oms';
+    /**
+     * @var string
+     */
+    private const DEFAULT_OMS_CONFIGURATION_DIRECTORY = '/data/config/Zed/oms';
 
-    private const array MERMAID_GLOBAL_CONFIGURATION = [
+    /**
+     * @var array<string, mixed>
+     */
+    private const MERMAID_GLOBAL_CONFIGURATION = [
         'htmlLabels' => true,
         'useMaxWidth' => true,
         'startOnLoad' => false,
