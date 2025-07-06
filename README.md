@@ -131,6 +131,33 @@ This resolves a breaking dependency issue that can occur with newer versions of 
 
 After installation, you can access the OMS Visualizer through your Zed application's interface. Navigate to the OMS section to view and interact with your process flow visualizations.
 
+## Development
+
+### Running Tests
+
+The OMS Visualizer includes a suite of unit tests to ensure code quality and functionality. To run the tests:
+
+1. Make sure you have installed the development dependencies:
+
+```bash
+composer install
+```
+
+2. Run the PHPUnit test suite:
+
+```bash
+vendor/bin/phpunit
+```
+
+The test suite includes:
+- Unit tests for the OmsVisualizerFacade
+- Tests for the FlowChartRenderer
+- Tests for state styling and creation
+
+### Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
 ## Support
 
 If you encounter any issues or have questions, please open an issue in the GitHub repository.

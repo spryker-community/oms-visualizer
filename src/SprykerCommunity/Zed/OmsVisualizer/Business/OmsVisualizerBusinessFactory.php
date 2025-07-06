@@ -8,6 +8,7 @@ namespace SprykerCommunity\Zed\OmsVisualizer\Business;
 use SprykerCommunity\Zed\OmsVisualizer\Business\Context\RenderContext;
 use SprykerCommunity\Zed\OmsVisualizer\Business\Creator\FilePathCreator;
 use SprykerCommunity\Zed\OmsVisualizer\Business\Creator\FlowChartRenderer;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Creator\FlowChartRendererInterface;
 use SprykerCommunity\Zed\OmsVisualizer\Business\Creator\StateCreator;
 use SprykerCommunity\Zed\OmsVisualizer\Business\Creator\VisitedFileTracker;
 use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\EventProcessor;
@@ -22,7 +23,7 @@ use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
  */
 class OmsVisualizerBusinessFactory extends AbstractBusinessFactory
 {
-    public function createFlowChartRenderer(): FlowChartRenderer
+    public function createFlowChartRenderer(): FlowChartRendererInterface
     {
         return new FlowChartRenderer(
             $this->createVisitedFileTracker(),
