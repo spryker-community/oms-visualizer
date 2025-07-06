@@ -1,0 +1,35 @@
+name: PHP Checks
+
+on:
+  pull_request:
+    types: [opened]
+    branches: [ main ]
+
+jobs:
+  php-checks:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+        extensions: mbstring, intl
+        coverage: none
+        tools: composer:v2, phpstan
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate --strict
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress
+
+    - name: Check PHP syntax
+      run: find src -type f -name '*.php' -print0 | xargs -0 -n1 php -l
+
+    - name: PHPStan
+      run: |
+        composer require --dev phpstan/phpstan
+        vendor/bin/phpstan analyse src --level=4
