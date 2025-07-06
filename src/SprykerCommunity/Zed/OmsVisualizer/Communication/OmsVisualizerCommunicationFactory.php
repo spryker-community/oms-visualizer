@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace SLarisch\Zed\OmsVisualizer\Communication;
+namespace SprykerCommunity\Zed\OmsVisualizer\Communication;
 
-use SLarisch\Zed\OmsVisualizer\OmsVisualizerDependencyProvider;
-use SLarisch\Zed\OmsVisualizer\OmsVisualizerConfig;
+use SprykerCommunity\Zed\OmsVisualizer\OmsVisualizerDependencyProvider;
+use SprykerCommunity\Zed\OmsVisualizer\OmsVisualizerConfig;
 use Spryker\Zed\Kernel\Communication\AbstractCommunicationFactory;
 use Spryker\Zed\Oms\Business\OmsFacadeInterface;
 

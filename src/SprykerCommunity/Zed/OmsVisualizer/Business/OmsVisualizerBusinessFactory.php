@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace SLarisch\Zed\OmsVisualizer\Business;
+namespace SprykerCommunity\Zed\OmsVisualizer\Business;
 
 
-use SLarisch\Zed\OmsVisualizer\Business\Context\RenderContext;
-use SLarisch\Zed\OmsVisualizer\Business\Creator\FilePathCreator;
-use SLarisch\Zed\OmsVisualizer\Business\Creator\FlowChartRenderer;
-use SLarisch\Zed\OmsVisualizer\Business\Creator\StateCreator;
-use SLarisch\Zed\OmsVisualizer\Business\Creator\VisitedFileTracker;
-use SLarisch\Zed\OmsVisualizer\Business\Processor\EventProcessor;
-use SLarisch\Zed\OmsVisualizer\Business\Processor\StateProcessor;
-use SLarisch\Zed\OmsVisualizer\Business\Processor\SubProcessProcessor;
-use SLarisch\Zed\OmsVisualizer\Business\Processor\TransitionProcessor;
-use SLarisch\Zed\OmsVisualizer\OmsVisualizerConfig;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Context\RenderContext;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Creator\FilePathCreator;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Creator\FlowChartRenderer;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Creator\StateCreator;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Creator\VisitedFileTracker;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\EventProcessor;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\StateProcessor;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\SubProcessProcessor;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\TransitionProcessor;
+use SprykerCommunity\Zed\OmsVisualizer\OmsVisualizerConfig;
 use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
 
 /**

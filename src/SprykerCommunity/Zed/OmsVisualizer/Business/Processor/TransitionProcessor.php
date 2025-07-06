@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace SLarisch\Zed\OmsVisualizer\Business\Processor;
+namespace SprykerCommunity\Zed\OmsVisualizer\Business\Processor;
 
-use SLarisch\Zed\OmsVisualizer\Business\Context\RenderContext;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Context\RenderContext;
 use SimpleXMLElement;
 
 readonly class TransitionProcessor

@@ -1,9 +1,9 @@
 <?php
 
-namespace SLarisch\Zed\OmsVisualizer\Communication\Controller;
+namespace SprykerCommunity\Zed\OmsVisualizer\Communication\Controller;
 
-use SLarisch\Zed\OmsVisualizer\Business\OmsVisualizerFacadeInterface;
-use SLarisch\Zed\OmsVisualizer\Communication\OmsVisualizerCommunicationFactory;
+use SprykerCommunity\Zed\OmsVisualizer\Business\OmsVisualizerFacadeInterface;
+use SprykerCommunity\Zed\OmsVisualizer\Communication\OmsVisualizerCommunicationFactory;
 use Spryker\Zed\Kernel\Communication\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;

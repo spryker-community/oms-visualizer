@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SLarisch\Zed\OmsVisualizer\Business\Processor;
+namespace SprykerCommunity\Zed\OmsVisualizer\Business\Processor;
 
 use SimpleXMLElement;
 

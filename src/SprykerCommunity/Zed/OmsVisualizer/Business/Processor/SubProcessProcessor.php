@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace SLarisch\Zed\OmsVisualizer\Business\Processor;
+namespace SprykerCommunity\Zed\OmsVisualizer\Business\Processor;
 
-use SLarisch\Zed\OmsVisualizer\Business\Creator\FlowChartRenderer;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Creator\FlowChartRenderer;
 use SimpleXMLElement;
 
 class SubProcessProcessor

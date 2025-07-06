@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SLarisch\Shared\OmsVisualizer;
+namespace SprykerCommunity\Shared\OmsVisualizer;
 
 class OmsVisualizerConstants
 {

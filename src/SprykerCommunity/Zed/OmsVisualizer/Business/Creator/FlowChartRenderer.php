@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace SLarisch\Zed\OmsVisualizer\Business\Creator;
+namespace SprykerCommunity\Zed\OmsVisualizer\Business\Creator;
 
-use SLarisch\Zed\OmsVisualizer\Business\Context\RenderContext;
-use SLarisch\Zed\OmsVisualizer\Business\Processor\EventProcessor;
-use SLarisch\Zed\OmsVisualizer\Business\Processor\StateProcessor;
-use SLarisch\Zed\OmsVisualizer\Business\Processor\SubProcessProcessor;
-use SLarisch\Zed\OmsVisualizer\Business\Processor\TransitionProcessor;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Context\RenderContext;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\EventProcessor;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\StateProcessor;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\SubProcessProcessor;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\TransitionProcessor;
 
 readonly class FlowChartRenderer
 {

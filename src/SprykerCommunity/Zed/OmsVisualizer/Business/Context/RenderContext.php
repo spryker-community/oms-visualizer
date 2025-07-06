@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SLarisch\Zed\OmsVisualizer\Business\Context;
+namespace SprykerCommunity\Zed\OmsVisualizer\Business\Context;
 
 class RenderContext
 {

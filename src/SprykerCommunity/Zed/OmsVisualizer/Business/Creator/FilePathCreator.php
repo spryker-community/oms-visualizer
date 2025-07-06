@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SLarisch\Zed\OmsVisualizer\Business\Creator;
+namespace SprykerCommunity\Zed\OmsVisualizer\Business\Creator;
 
 readonly class FilePathCreator
 {

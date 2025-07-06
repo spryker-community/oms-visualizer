@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace SLarisch\Zed\OmsVisualizer\Business\Processor;
+namespace SprykerCommunity\Zed\OmsVisualizer\Business\Processor;
 
-use SLarisch\Zed\OmsVisualizer\Business\Context\RenderContext;
-use SLarisch\Zed\OmsVisualizer\Business\Creator\StateCreator;
-use SLarisch\Zed\OmsVisualizer\OmsVisualizerConfig;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Context\RenderContext;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Creator\StateCreator;
+use SprykerCommunity\Zed\OmsVisualizer\OmsVisualizerConfig;
 use SimpleXMLElement;
 
 class StateProcessor

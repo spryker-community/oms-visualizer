@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace SLarisch\Zed\OmsVisualizer;
+namespace SprykerCommunity\Zed\OmsVisualizer;
 
 use Generated\Shared\Transfer\OmsVisualizerStyleTransfer;
 use Generated\Shared\Transfer\StateStyleTransfer;
 use Generated\Shared\Transfer\TransitionStyleTransfer;
-use SLarisch\Shared\OmsVisualizer\OmsVisualizerConstants;
+use SprykerCommunity\Shared\OmsVisualizer\OmsVisualizerConstants;
 use Spryker\Zed\Kernel\AbstractBundleConfig;
 
 class OmsVisualizerConfig extends AbstractBundleConfig
