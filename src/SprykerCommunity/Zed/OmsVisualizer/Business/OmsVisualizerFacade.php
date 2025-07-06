@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SLarisch\Zed\OmsVisualizer\Business;
+namespace SprykerCommunity\Zed\OmsVisualizer\Business;
 
 use Spryker\Zed\Kernel\Business\AbstractFacade;
 

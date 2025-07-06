@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace SLarisch\Zed\OmsVisualizer\Business\Creator;
+namespace SprykerCommunity\Zed\OmsVisualizer\Business\Creator;
 
 use Generated\Shared\Transfer\StateStyleTransfer;
-use SLarisch\Zed\OmsVisualizer\OmsVisualizerConfig;
+use SprykerCommunity\Zed\OmsVisualizer\OmsVisualizerConfig;
 use RuntimeException;
 
 readonly class StateCreator

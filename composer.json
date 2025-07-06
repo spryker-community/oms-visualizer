@@ -1,9 +1,9 @@
 {
-  "name": "slarisch/oms-visualizer",
+  "name": "spryker-community/oms-visualizer",
   "type": "library",
   "description": "OmsVisualizer - visualize OMS workflow with mermaid",
   "keywords": ["spryker", "oms", "visualizer", "workflow", "mermaid"],
-  "homepage": "https://github.com/slarisch/oms-visualizer",
+  "homepage": "https://github.com/spryker-community/oms-visualizer",
   "require": {
     "php": ">=8.2",
     "spryker/kernel": "^3.52.0"
@@ -12,7 +12,7 @@
   },
   "autoload": {
     "psr-4": {
-      "SLarisch\\": "src/SLarisch"
+      "SprykerCommunity\\": "src/SprykerCommunity"
     }
   },
   "authors": [
@@ -22,8 +22,8 @@
     }
   ],
   "support": {
-    "issues": "https://github.com/slarisch/oms-visualizer/issues",
-    "source": "https://github.com/slarisch/oms-visualizer"
+    "issues": "https://github.com/spryker-community/oms-visualizer/issues",
+    "source": "https://github.com/spryker-community/oms-visualizer"
   },
   "config": {
     "sort-packages": true,
