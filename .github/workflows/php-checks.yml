@@ -1,4 +1,4 @@
-name: PHP Checks
+name: PHP Unit Checks
 
 on:
   pull_request:
@@ -33,3 +33,6 @@ jobs:
       run: |
         composer require --dev phpstan/phpstan
         vendor/bin/phpstan analyse src --level=4
+
+    - name: Run tests
+      run: vendor/bin/phpunit

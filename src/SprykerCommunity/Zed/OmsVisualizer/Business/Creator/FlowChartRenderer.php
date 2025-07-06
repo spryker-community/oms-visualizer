@@ -10,7 +10,7 @@ use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\StateProcessor;
 use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\SubProcessProcessor;
 use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\TransitionProcessor;
 
-readonly class FlowChartRenderer
+readonly class FlowChartRenderer implements FlowChartRendererInterface
 {
     public function __construct(
         private VisitedFileTracker $visitedFileTracker,

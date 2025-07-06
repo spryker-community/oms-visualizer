@@ -8,7 +8,7 @@ use Generated\Shared\Transfer\StateStyleTransfer;
 use SprykerCommunity\Zed\OmsVisualizer\OmsVisualizerConfig;
 use RuntimeException;
 
-readonly class StateCreator
+readonly class StateCreator implements StateCreateInterface
 {
     public function __construct(
         private OmsVisualizerConfig $mermaidConfig
@@ -21,12 +21,12 @@ readonly class StateCreator
 
         $method = sprintf('get%sStateStyle', ucfirst($stateType));
 
-        if (!method_exists($defaultStyle, $method)) {
+        try {
+            /** @var StateStyleTransfer $style */
+            $style = $defaultStyle->$method();
+        } catch (\Exception $e) {
             throw new RuntimeException("Method $method does not exist on DefaultStyleConfig");
         }
-
-        /** @var StateStyleTransfer $style */
-        $style = $defaultStyle->$method();
 
         $backgroundColor = $style->getBackGroundColor();
         $borderColor = $style->getBorderColor();
@@ -35,12 +35,11 @@ readonly class StateCreator
 
         return
             sprintf(
-                "style %s fill:%s, stroke: %s, color: %s, stroke-width: %spx",
+                "style %s fill:%s,stroke:%s,color:%s",
                 $stateName,
                 $backgroundColor,
                 $borderColor,
-                $fontColor,
-                $borderWidth
+                $fontColor
             );
     }
 }
