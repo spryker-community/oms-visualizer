@@ -46,6 +46,7 @@ final class OmsVisualizerDependencyProvider extends AbstractBundleDependencyProv
     protected function addOmsFacade(Container $container): Container
     {
         $container->set(static::FACADE_OMS, function (Container $container) {
+            /** @phpstan-ignore-next-line */
             return $container->getLocator()->oms()->facade();
         });
 

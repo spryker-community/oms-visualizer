@@ -11,7 +11,10 @@ use SimpleXMLElement;
 
 class StateProcessor
 {
-    private const string START_STATE = 'new';
+    /**
+     * @var string
+     */
+    private const START_STATE = 'new';
 
     public function __construct(
         private readonly StateCreator $stateCreator,

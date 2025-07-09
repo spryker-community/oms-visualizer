@@ -33,9 +33,9 @@ class EventProcessor
     public function getEventLabel(string $eventName): string
     {
         if (isset(self::$events[$eventName])) {
-            $eventData = self::$events[$eventName];
+            $eventData = self::$events[$eventName] ?? null;
 
-            if ($eventData === null) {
+            if ($eventData == null) {
                 return '';
             }
 

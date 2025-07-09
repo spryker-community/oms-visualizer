@@ -9,10 +9,20 @@
     "spryker/kernel": "^3.52.0"
   },
   "require-dev": {
+    "mockery/mockery": "^1.5",
+    "phpstan/phpstan": "^2.1",
+    "phpunit/phpunit": "^10.0"
   },
   "autoload": {
     "psr-4": {
       "SprykerCommunity\\": "src/SprykerCommunity"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SprykerCommunityTest\\": "tests/SprykerCommunityTest",
+      "Generated\\": "tests/_support/Stubs/Generated",
+      "Spryker\\": "tests/_support/Stubs/Spryker"
     }
   },
   "authors": [
