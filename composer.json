@@ -20,7 +20,9 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "SprykerCommunityTest\\": "tests/SprykerCommunityTest"
+      "SprykerCommunityTest\\": "tests/SprykerCommunityTest",
+      "Generated\\": "tests/_support/Stubs/Generated",
+      "Spryker\\": "tests/_support/Stubs/Spryker"
     }
   },
   "authors": [
