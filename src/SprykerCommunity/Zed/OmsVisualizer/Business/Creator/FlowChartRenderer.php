@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace SprykerCommunity\Zed\OmsVisualizer\Business\Creator;
 
 use SprykerCommunity\Zed\OmsVisualizer\Business\Context\RenderContext;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\EventPreProcessor;
 use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\EventProcessor;
 use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\StateProcessor;
 use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\SubProcessProcessor;
@@ -15,17 +16,19 @@ readonly class FlowChartRenderer implements FlowChartRendererInterface
     public function __construct(
         private VisitedFileTracker $visitedFileTracker,
         private StateCreator $stateCreator,
-        private EventProcessor $eventProcessor,
         private StateProcessor $stateProcessor,
         private TransitionProcessor $transitionProcessor,
         private SubProcessProcessor $subProcessProcessor,
         private RenderContext $renderContext,
-        private FilePathCreator $filePathCreator
+        private FilePathCreator $filePathCreator,
+        private EventPreProcessor $eventPreProcessor
     ) {
     }
 
     public function render(string $processName): array
     {
+        $this->eventPreProcessor->preProcessEvents($processName);
+
         if ($this->visitedFileTracker->hasVisited($processName)) {
             return [];
         }
@@ -46,8 +49,6 @@ readonly class FlowChartRenderer implements FlowChartRendererInterface
         }
 
         foreach ($xml->process as $process) {
-            $this->eventProcessor->process($process);
-
             $lines[] = $this->stateProcessor->process($process, $processName, $this->renderContext);
             $lines[] = $this->transitionProcessor->process($process, $this->renderContext);
             $lines[] = $this->subProcessProcessor->process($process, $this);
