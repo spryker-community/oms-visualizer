@@ -11,6 +11,7 @@ use SprykerCommunity\Zed\OmsVisualizer\Business\Creator\FlowChartRenderer;
 use SprykerCommunity\Zed\OmsVisualizer\Business\Creator\FlowChartRendererInterface;
 use SprykerCommunity\Zed\OmsVisualizer\Business\Creator\StateCreator;
 use SprykerCommunity\Zed\OmsVisualizer\Business\Creator\VisitedFileTracker;
+use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\EventPreProcessor;
 use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\EventProcessor;
 use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\StateProcessor;
 use SprykerCommunity\Zed\OmsVisualizer\Business\Processor\SubProcessProcessor;
@@ -28,12 +29,12 @@ class OmsVisualizerBusinessFactory extends AbstractBusinessFactory
         return new FlowChartRenderer(
             $this->createVisitedFileTracker(),
             $this->createStateCreator(),
-            $this->createEventProcessor(),
             $this->createStateProcessor(),
             $this->createTransitionProcessor(),
             $this->createSubProcessProcessor(),
             $this->createRenderContext(),
-            $this->createFilePathCreator()
+            $this->createFilePathCreator(),
+            $this->createEventPreProcessor()
         );
     }
 
@@ -45,6 +46,15 @@ class OmsVisualizerBusinessFactory extends AbstractBusinessFactory
     private function createEventProcessor(): EventProcessor
     {
         return new EventProcessor();
+    }
+
+    private function createEventPreProcessor(): EventPreProcessor
+    {
+        return new EventPreProcessor(
+            $this->createEventProcessor(),
+            $this->createFilePathCreator(),
+            $this->createVisitedFileTracker()
+        );
     }
 
     private function createStateProcessor(): StateProcessor
