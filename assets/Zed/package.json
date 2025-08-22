@@ -5,6 +5,6 @@
   "license": "MIT",
   "dependencies": {
     "@mermaid-js/layout-elk": "^0.1.7",
-    "mermaid": "^11.0"
+    "mermaid": "^11.10"
   }
 }
